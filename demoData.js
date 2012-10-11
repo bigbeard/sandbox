@@ -8,7 +8,7 @@ var sendTrackingDataPacket = exports.sendTrackingDataPacket;
 
 exports.createPacket = function() {
     var trackingUnitId = Math.floor(Math.random() * 12 ) + 1;
-    return { id: trackingUnitId, latitude: 53.8181, longitude: -1.508, speed: 53 };
+    return { trackingUnitId: trackingUnitId, latitude: 53.8181, longitude: -1.508, speed: 53 };
 };
 var createPacket = exports.createPacket;
 

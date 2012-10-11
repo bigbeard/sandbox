@@ -1,5 +1,7 @@
 var http = require('http'),
-    trackingData = require('./trackingData');
+    demoData = require('./demoData');
+    dataProcess = require('./dataProcess')
+
 
 var server = http.createServer();
 
@@ -16,12 +18,13 @@ server.on('request', function(req, res) {
     req.on('end', function() {
         var packet = JSON.parse(data);
         console.log('Request data: ', packet);
+        dataProcess.process(packet);
     });
 });
 
 server.listen(3000, '127.0.0.1', function() {
     console.log('Server running at http://127.0.0.1:3000/');
 
-    trackingData.sendData();
+    demoData.sendData();
 });
 
