@@ -31,8 +31,17 @@ var getCollection = function (db, collectionName, callback) {
 exports.clear = function (db, collectionName, callback) {
     getCollection(db, collectionName, function(err, collection) {
         collection.remove(function (err, collection) {
-            console.log('collection has been cleared');
-            callback();
+            if (err) {
+                console.log(err);
+                if (callback) {
+                    callback(err);
+                }
+            } else {
+                console.log('collection has been cleared');
+                if (callback) {
+                    callback();
+                }
+            }
         });
     });
 };
@@ -40,7 +49,9 @@ exports.clear = function (db, collectionName, callback) {
 exports.getAll = function (db, collectionName, callback) {
     getCollection(db, collectionName, function(err, collection) {
         collection.find().toArray(function(err, items) {
-            callback(err, items);
+            if (callback) {
+                callback(err, items);
+            }
         });
     });
 };
@@ -48,12 +59,16 @@ exports.getAll = function (db, collectionName, callback) {
 exports.insert = function (db, collectionName, doc, callback) {
     getCollection(db, collectionName, function(err, collection) {
         if (err) {
-            callback(err);
+            if (callback) {
+                callback(err);
+            }
         } else {
             collection.insert(doc, {safe: true}, function(err, result) {
                 if (err) {
                     console.log(err);
-                    callback(err);
+                    if (callback) {
+                        callback(err);
+                    }
                 } else {
                     console.log("record inserted into", collectionName);
                     if (callback) {
@@ -64,5 +79,35 @@ exports.insert = function (db, collectionName, doc, callback) {
         }
     });
 };
+
+exports.clear = function (db, collectionName, callback) {
+    getCollection(db, collectionName, function(err, collection) {
+        collection.remove(function (err, collection) {
+            console.log('collection has been cleared');
+            if (callback) {
+                callback();
+            }
+        });
+    });
+};
+
+exports.getAll = function (db, collectionName, callback) {
+    getCollection(db, collectionName, function(err, collection) {
+        collection.find().toArray(function(err, items) {
+            if (err) {
+                console.log(err);
+                if (callback) {
+                    callback(err);
+                }
+            } else {
+                if (callback) {
+                    callback(err, items);
+                }
+            }
+        });
+    });
+};
+
+
 
 
