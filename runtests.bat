@@ -1,0 +1,2 @@
+mocha -R list tests/.
+

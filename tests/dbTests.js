@@ -18,8 +18,8 @@ describe('Open / Clear /Read / Write to Database', function() {
             if (err) {
                 return done(err)
             }
+            done();
         });
-        done();
     });
 
     it('Should write the record without error', function(done) {
