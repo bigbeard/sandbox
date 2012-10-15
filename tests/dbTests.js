@@ -5,16 +5,18 @@ var assert = require('assert'),
 
 describe('Open / Clear /Read / Write to Database', function() {
     var testDb;
-    before(function(done) {
-        mongoDb.openDatabase(function(err, db) {
-            assert(db);
-            testDb = db;
+
+    before(function (done) {
+        mongoDb.openDatabase(function (err) {
+            if (err) {
+                return done(err);
+            }
             done();
         });
     });
 
     it('Should clear the collection', function(done) {
-        mongoDb.clear(testDb, "testCollection", function(err) {
+        mongoDb.clear("testCollection", function(err) {
             if (err) {
                 return done(err)
             }
@@ -23,7 +25,7 @@ describe('Open / Clear /Read / Write to Database', function() {
     });
 
     it('Should write the record without error', function(done) {
-        mongoDb.insert(testDb, "testCollection", { cheese: "edam" }, function(err, result) {
+        mongoDb.insert("testCollection", { cheese: "edam" }, function(err, result) {
             if (err) {
                 return done(err)
             }
@@ -33,7 +35,7 @@ describe('Open / Clear /Read / Write to Database', function() {
     });
 
     it('Should read the record back', function(done) {
-        mongoDb.getAll(testDb, "testCollection", function(err, items) {
+        mongoDb.getAll("testCollection", function(err, items) {
             if (err) {
                 return done(err)
             }
