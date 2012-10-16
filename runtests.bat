@@ -1,2 +1,3 @@
-mocha -R list tests/.
+mocha -R list --globals journies tests/.
+
 

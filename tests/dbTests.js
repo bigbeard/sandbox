@@ -3,7 +3,7 @@ var assert = require('assert'),
     mongoDb = require('../db');
 
 
-describe('Open / Clear /Read / Write to Database', function() {
+describe('Open / Clear /Read / Write to Database.', function() {
     var testDb;
 
     before(function (done) {
@@ -15,7 +15,7 @@ describe('Open / Clear /Read / Write to Database', function() {
         });
     });
 
-    it('Should clear the collection', function(done) {
+    it('Should clear the collection.', function(done) {
         mongoDb.clear("testCollection", function(err) {
             if (err) {
                 return done(err)
@@ -24,7 +24,7 @@ describe('Open / Clear /Read / Write to Database', function() {
         });
     });
 
-    it('Should write the record without error', function(done) {
+    it('Should write the record without error.', function(done) {
         mongoDb.insert("testCollection", { cheese: "edam" }, function(err, result) {
             if (err) {
                 return done(err)
@@ -34,7 +34,7 @@ describe('Open / Clear /Read / Write to Database', function() {
         });
     });
 
-    it('Should read the record back', function(done) {
+    it('Should read the record back.', function(done) {
         mongoDb.getAll("testCollection", function(err, items) {
             if (err) {
                 return done(err)

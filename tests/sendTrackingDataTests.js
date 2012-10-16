@@ -4,8 +4,8 @@ var assert = require('assert'),
     sendEvent = require('../sendEvent');
 
 
-describe('Create Tracking Data', function() {
-    it('should return a tracking data packet', function() {
+describe('Create Tracking Data.', function() {
+    it('Should return a tracking data packet.', function() {
         var packet = demoData.createPacket();
 
         assert(packet.trackingUnitId > 0);
@@ -14,11 +14,11 @@ describe('Create Tracking Data', function() {
         assert(packet.speed >= 0);
     });
 
-    it('should send the packet to be posted', function() {
-        var spy = sinon.spy(sendEvent, "send");
+    it('Should send the packet to be posted.', function() {
+        var stub = sinon.stub(sendEvent, "send");
 
         demoData.sendTrackingDataPacket();
-        assert(spy.calledOnce === true);
+        assert(stub.calledOnce === true);
         sendEvent.send.restore();
     });
 });
