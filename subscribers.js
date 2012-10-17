@@ -16,7 +16,10 @@ exports.loadSubscribers = function (publisher) {
         var filename = fileStats.name;
         console.log('filename:', filename);
         var subscriber = require('./subscribers/' + filename);
-        publisher.addSubscriber(subscriber);
+
+        if ((subscriber.publish) && (subscriber.output) && (subscriber.eventTypes)) {
+            publisher.addSubscriber(subscriber);
+        }
 
         next();
     });
@@ -24,9 +27,8 @@ exports.loadSubscribers = function (publisher) {
     walker.on("errors", function (root, nodeStatsArray, next) {
         next();
     });
-/*
+
     walker.on("end", function () {
-        console.log('all done');
+        console.log('all subscribers loaded');
     });
-*/
 };
