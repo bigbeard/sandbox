@@ -28,6 +28,6 @@ server.listen(3000, '127.0.0.1', function() {
 });
 
 var setUpEventSourceEngine = function () {
-    subscribers.subscribeToEvents(publisher);
+    subscribers.loadSubscribers(publisher);
 };
 

@@ -1,9 +1,10 @@
 var assert = require('assert'),
     sinon = require('sinon'),
-    journeySubscriber = require('../journeySubscriber');
+    journeySubscriber = require('../subscribers/journeySubscriber');
 
 describe('Create journey.', function() {
     it('One vehicle. Should return 1 populated journey object', function () {
+
         var stub = sinon.stub(journeySubscriber, "output");
         journeySubscriber.publish({ trackingUnitId: 1, type: "tracking", dateTime: "01/01/01 12:00:00", status: "ign_on" });
         journeySubscriber.publish({ trackingUnitId: 1, type: "tracking", dateTime: "01/01/01 12:01:00", status: "idling" });
@@ -18,7 +19,6 @@ describe('Create journey.', function() {
 
         journeySubscriber.output.restore();
     });
-
     it('Two vehicles. Should return 2 populated journey objects', function () {
         var stub = sinon.stub(journeySubscriber, "output");
         journeySubscriber.publish({ trackingUnitId: 1, type: "tracking", dateTime: "01/01/01 12:00:00", status: "ign_on" });

@@ -1,37 +1,32 @@
-var mongoDb = require('./db'),
-    journeySubscriber = require('./journeySubscriber');
+var fs = require('fs'),
+    walk = require('walk');
 
-exports.subscribeToEvents = function (publisher) {
-    publisher.addSubscriber(new eventStoreSubscriber());
-    publisher.addSubscriber(new speedSubscriber());
-    publisher.addSubscriber(journeySubscriber);
+exports.loadSubscribers = function (publisher) {
+    var walkOptions = {
+        followLinks: false
+    };
+
+    var walker = walk.walk('./subscribers', walkOptions);
+
+    walker.on("directories", function (root, dirStatsArray, next) {
+        next();
+    });
+
+    walker.on("file", function (root, fileStats, next) {
+        var filename = fileStats.name;
+        console.log('filename:', filename);
+        var subscriber = require('./subscribers/' + filename);
+        publisher.addSubscriber(subscriber);
+
+        next();
+    });
+
+    walker.on("errors", function (root, nodeStatsArray, next) {
+        next();
+    });
+/*
+    walker.on("end", function () {
+        console.log('all done');
+    });
+*/
 };
-
-var speedSubscriber = function () {
-    this.eventTypes = [ "tracking" ];
-
-    this.publish = function (event) {
-        if (event.speed > 50) {
-            console.log("speeding: ", event.speed);
-            this.output(event);
-        }
-    };
-
-    this.output = function (outputData) {
-       mongoDb.insert("speeding", outputData);
-    };
-};
-
-var eventStoreSubscriber = function () {
-    this.eventTypes = [ "all" ];
-
-    this.publish = function (event) {
-        this.output(event);
-    };
-
-    this.output = function (outputData) {
-       mongoDb.insert("events", outputData);
-    };
-};
-
-

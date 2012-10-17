@@ -1,6 +1,4 @@
-var mongoDb = require("./db");
-
-exports.eventTypes = [ "tracking" ];
+var mongoDb = require("../db");
 var journies = [];
 
 var isStart = function (event) {
@@ -31,25 +29,7 @@ var createJourneyAndAddToArray  = function (event) {
 var endJourneyAndOutput = function (event, journeyToEnd) {
     journeyToEnd.endDateTime = event.dateTime;
     journies.splice(journies.indexOf(journeyToEnd), 1);
-    exports.output(journeyToEnd);
-};
-
-exports.publish = function (event) {
-    if (isStart(event)) {
-        createJourneyAndAddToArray(event);
-    }
-
-    if (isEnd(event)) {
-        journies.forEach(function (journeyToProcess) {
-            if (journeyToProcess.trackingUnitId === event.trackingUnitId) {
-                endJourneyAndOutput(event, journeyToProcess);
-            };
-        });
-    }
-};
-
-exports.output = function (outputObject) {
-    mongoDb.insert("journey", outputObject);
+    journeySubscriber.output(journeyToEnd);
 };
 
 var journey = function() {
@@ -59,3 +39,25 @@ var journey = function() {
     this.totalDrivingTime;
     this.endDateTime;
 };
+
+var journeySubscriber = {
+    eventTypes: [ "tracking" ],
+    publish: function (event) {
+        if (isStart(event)) {
+            createJourneyAndAddToArray(event);
+        }
+
+        if (isEnd(event)) {
+            journies.forEach(function (journeyToProcess) {
+                if (journeyToProcess.trackingUnitId === event.trackingUnitId) {
+                    endJourneyAndOutput(event, journeyToProcess);
+                };
+            });
+        }
+    },
+    output: function (outputObject) {
+        mongoDb.insert("journey", outputObject);
+    }
+};
+
+module.exports = journeySubscriber;
