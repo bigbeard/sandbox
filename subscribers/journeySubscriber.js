@@ -37,31 +37,48 @@ var endJourneyAndOutput = function (event, journeyToEnd) {
     journeySubscriber.output(journeyToEnd);
 };
 
+var addTimesToJourney = function (event, previousEvent, journey) {
+    if (previousEvent.status === "driving") {
+        journey.drivingTimeSeconds += Math.round((event.dateTime.getTime() - previousEvent.dateTime.getTime()) / 1000);
+    }
+
+    if (previousEvent.status === "idling") {
+        journey.idlingTimeSeconds += Math.round((event.dateTime.getTime() - previousEvent.dateTime.getTime()) / 1000);
+    }
+};
+
 var journey = function() {
     this.trackingUnitId;
     this.startDateTime;
-    this.totalIdlingTime;
-    this.totalDrivingTime;
+    this.idlingTimeSeconds = 0;
+    this.drivingTimeSeconds = 0;
     this.endDateTime;
 };
 
 var journeySubscriber = {
     eventTypes: [ "tracking" ],
     publish: function (event) {
-        var currentStatus =  vehicleStatuses.get(event.trackingUnitId, "stopped");
+        var previousEvent =  vehicleStatuses.get(event.trackingUnitId, undefined);
+        var currentStatus = "stopped";
+        if (previousEvent) {
+            currentStatus = previousEvent.status;
+        }
+        var existingJourney = journies.get(event.trackingUnitId, undefined);
 
         if (isJourneyStart(event, currentStatus)) {
             createJourneyAndStore(event);
-        }
-
-        if (isJourneyEnd(event, currentStatus)) {
-            var journeyToProcess = journies.get(event.trackingUnitId, undefined);
-            if (journeyToProcess) {
-                endJourneyAndOutput(event, journeyToProcess);
+        } else if (isJourneyEnd(event, currentStatus)) {
+            if (existingJourney) {
+                addTimesToJourney(event, previousEvent, existingJourney);
+                endJourneyAndOutput(event, existingJourney);
+            }
+        } else {
+            if (existingJourney) {
+                addTimesToJourney(event, previousEvent, existingJourney);
             }
         }
 
-        vehicleStatuses.set(event.trackingUnitId, event.status);
+        vehicleStatuses.set(event.trackingUnitId, event);
     },
     output: function (outputObject) {
         mongoDb.insert("journey", outputObject);
