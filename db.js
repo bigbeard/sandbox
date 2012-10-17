@@ -76,7 +76,7 @@ exports.insert = function (collectionName, doc, callback) {
                         callback(err);
                     }
                 } else {
-                    console.log("record inserted into", collectionName);
+//                    console.log("record inserted into", collectionName);
                     if (callback) {
                         callback(err, result);
                     }

@@ -81,6 +81,7 @@ var journeySubscriber = {
         vehicleStatuses.set(event.trackingUnitId, event);
     },
     output: function (outputObject) {
+        console.log("Journey Event");
         mongoDb.insert("journey", outputObject);
     }
 };
