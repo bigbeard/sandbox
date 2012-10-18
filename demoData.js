@@ -12,9 +12,24 @@ var sendTrackingDataPacket = exports.sendTrackingDataPacket;
 exports.createPacket = function() {
     var trackingUnitId = Math.floor(Math.random() * 12 ) + 1;
     var speed = Math.floor(Math.random() * 100);
-    return { trackingUnitId: trackingUnitId, latitude: 53.8181, longitude: -1.508, speed: speed, type: "tracking" };
+    var statusCode = Math.floor(Math.random() * 3);
+    var status;
+
+    switch (statusCode) {
+        case 0 :
+            status = "stopped";
+            break;
+        case 1 :
+            status = "driving";
+            break;
+        case 2 :
+            status = "idling";
+    };
+
+
+    return { trackingUnitId: trackingUnitId, latitude: 53.8181, longitude: -1.508, speed: speed, type: "tracking", status: status };
 };
 var createPacket = exports.createPacket;
 
-setInterval(sendTrackingDataPacket, 1);
+setInterval(sendTrackingDataPacket, 10);
 
