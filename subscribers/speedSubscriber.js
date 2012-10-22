@@ -8,7 +8,7 @@ var speedSubscriber = {
     },
     publish: function (event) {
         if (event.speed > 50) {
-            console.log("speeding: ", event.speed);
+            console.log("speeding: ", event.speed, event.trackingUnitId);
             this.output(event);
         }
     }

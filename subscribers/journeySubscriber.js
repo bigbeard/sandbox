@@ -84,7 +84,7 @@ var journeySubscriber = {
         vehicleStatuses.set(event.trackingUnitId, event);
     },
     output: function (outputObject) {
-        console.log("Journey Event");
+        console.log("Journey Event: ", outputObject.trackingUnitId);
         emitter.emit("journey", outputObject);
     }
 };

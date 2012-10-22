@@ -3,6 +3,7 @@
 #################
 
 config.js
+node_modules
 
 #################
 ## Eclipse

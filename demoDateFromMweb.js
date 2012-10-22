@@ -2,7 +2,7 @@ var soap = require("soap"),
 sendEvent = require("./sendEvent"),
 fs = require('fs'),
 coll = require('coll')
-config = require('config');
+config = require('./config');
 
 var vehicleLastEvents = coll.Dict();
 
