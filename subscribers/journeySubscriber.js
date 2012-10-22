@@ -1,5 +1,6 @@
 var mongoDb = require("../db"),
-    coll = require("coll");
+    coll = require("coll"),
+    emitter = require("../emitter");
 
 var journies = coll.Dict();
 var vehicleStatuses = coll.Dict();
@@ -58,8 +59,12 @@ var journey = function() {
 var journeySubscriber = {
     eventTypes: [ "tracking" ],
     publish: function (event) {
+        if (event.dateTime) {
+            event.dateTime = new Date(event.dateTime);
+        }
         var previousEvent =  vehicleStatuses.get(event.trackingUnitId, undefined);
         var currentStatus = "stopped";
+
         if (previousEvent) {
             currentStatus = previousEvent.status;
         }
@@ -72,17 +77,15 @@ var journeySubscriber = {
                 addTimesToJourney(event, previousEvent, existingJourney);
                 endJourneyAndOutput(event, existingJourney);
             }
-        } else {
-            if (existingJourney) {
-                addTimesToJourney(event, previousEvent, existingJourney);
-            }
+        } else if (existingJourney) {
+            addTimesToJourney(event, previousEvent, existingJourney);
         }
 
         vehicleStatuses.set(event.trackingUnitId, event);
     },
     output: function (outputObject) {
         console.log("Journey Event");
-        mongoDb.insert("journey", outputObject);
+        emitter.emit("journey", outputObject);
     }
 };
 

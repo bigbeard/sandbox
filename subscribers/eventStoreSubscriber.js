@@ -1,4 +1,5 @@
-var mongoDb = require('../db');
+var mongoDb = require('../db'),
+    emitter = require('../emitter');
 
 var eventStoreSubscriber = {
     eventTypes: [ "all" ],
@@ -6,7 +7,7 @@ var eventStoreSubscriber = {
         this.output(event);
     },
     output: function (outputData) {
-       mongoDb.insert("events", outputData);
+        emitter.emit("event, outputData");
     }
 };
 

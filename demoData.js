@@ -27,9 +27,17 @@ exports.createPacket = function() {
     };
 
 
-    return { trackingUnitId: trackingUnitId, latitude: 53.8181, longitude: -1.508, speed: speed, type: "tracking", status: status };
+    return {
+        trackingUnitId: trackingUnitId.toString(),
+        latitude: 53.8181,
+        longitude: -1.508,
+        speed: speed,
+        type: "tracking",
+        status: status,
+        dateTime: new Date()
+    };
 };
 var createPacket = exports.createPacket;
 
-setInterval(sendTrackingDataPacket, 10);
+setInterval(sendTrackingDataPacket, 100);
 

@@ -1,7 +1,8 @@
 var http = require('http'),
     publisher = require('./publisher'),
     subscribers = require('./subscribers'),
-    db = require('./db');
+    db = require('./db'),
+    mongoOutput = require('./outputs/mongoOutput');
 
 var server = http.createServer();
 
@@ -29,5 +30,6 @@ server.listen(3000, '127.0.0.1', function() {
 
 var setUpEventSourceEngine = function () {
     subscribers.loadSubscribers(publisher);
+    mongoOutput.loadOuputs();
 };
 

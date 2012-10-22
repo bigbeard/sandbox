@@ -1,9 +1,10 @@
-var mongoDb = require('../db');
+var mongoDb = require('../db'),
+    emitter = require('../emitter');
 
 var speedSubscriber = {
     eventTypes: [ "tracking" ],
     output: function (outputData) {
-        mongoDb.insert("speeding", outputData);
+        emitter.emit("speeding", outputData);
     },
     publish: function (event) {
         if (event.speed > 50) {
