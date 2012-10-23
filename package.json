@@ -11,7 +11,8 @@
     "mongodb": "~1.0.2",
     "sinon": "~1.4.2",
     "soap": "~0.2.7",
-    "walk": "~2.2.1"
+    "walk": "~2.2.1",
+	"nano": "~3.3.3"
   },
   "devDependencies": {
     "mocha": "*"
