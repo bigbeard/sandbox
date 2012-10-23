@@ -1,5 +1,4 @@
-var mongoDb = require("../db"),
-    coll = require("coll"),
+var coll = require("coll"),
     emitter = require("../emitter");
 
 var journies = coll.Dict();

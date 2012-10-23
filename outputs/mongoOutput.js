@@ -1,7 +1,7 @@
 var emitter = require("../emitter");
-mongoDb = require("../db");
+mongoDb = require("../mongoDb");
 
-exports.loadOuputs = function () {
+exports.loadOutputs = function () {
     emitter.on("speeding", function (event) {
         mongoDb.insert("speeding", event);
     });

@@ -23,6 +23,8 @@ exports.openDatabase = function (callback) {
     });
 };
 
+exports.openDatabase();
+
 var getCollection = function (collectionName, callback) {
     database.collection(collectionName, function(err, collection) {
         if (err) {

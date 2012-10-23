@@ -1,5 +1,4 @@
-var mongoDb = require('../db'),
-    emitter = require('../emitter');
+var emitter = require('../emitter');
 
 var speedSubscriber = {
     eventTypes: [ "tracking" ],

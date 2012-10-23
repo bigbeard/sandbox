@@ -1,8 +1,8 @@
 var http = require('http'),
     publisher = require('./publisher'),
     subscribers = require('./subscribers'),
-    db = require('./db'),
-    mongoOutput = require('./outputs/mongoOutput');
+    mongoOutput = require('./outputs/mongoOutput'),
+    couchOutput = require('./outputs/couchOutput');
 
 var server = http.createServer();
 
@@ -25,11 +25,11 @@ server.on('request', function(req, res) {
 server.listen(3000, '127.0.0.1', function() {
     console.log('Server running at http://127.0.0.1:3000/');
     setUpEventSourceEngine();
-    db.openDatabase();
 });
 
 var setUpEventSourceEngine = function () {
     subscribers.loadSubscribers(publisher);
-    mongoOutput.loadOuputs();
+    mongoOutput.loadOutputs();
+    couchOutput.loadOutputs();
 };
 

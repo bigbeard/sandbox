@@ -1,19 +1,10 @@
 var assert = require('assert'),
     sinon = require('sinon'),
-    mongoDb = require('../db');
+    mongoDb = require('../mongoDb');
 
 
 describe('Open / Clear /Read / Write to Database.', function() {
     var testDb;
-
-    before(function (done) {
-        mongoDb.openDatabase(function (err) {
-            if (err) {
-                return done(err);
-            }
-            done();
-        });
-    });
 
     it('Should clear the collection.', function(done) {
         mongoDb.clear("testCollection", function(err) {
