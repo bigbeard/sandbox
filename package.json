@@ -1,28 +1,28 @@
 {
-  "name": "sandbox",
-  "version": "0.0.0",
-  "description": "My Sandbox ----------",
-  "main": "config.js",
-  "directories": {
-    "test": "tests"
-  },
-  "dependencies": {
-    "coll": "~0.1.2",
-    "mongodb": "~1.0.2",
-    "sinon": "~1.4.2",
-    "soap": "~0.2.7",
-    "walk": "~2.2.1",
-	"nano": "~3.3.3"
-  },
-  "devDependencies": {
-    "mocha": "*"
-  },
-  "scripts": {
-    "test": "./node_modules/mocha/bin/mocha -R list tests/",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bigbeard/sandbox.git"
-  }
+    "name": "sandbox",
+        "version": "0.0.0",
+        "description": "My Sandbox ----------",
+        "main": "config.js",
+        "directories": {
+            "test": "tests"
+        },
+        "dependencies": {
+            "coll": "~0.1.2",
+            "mongodb": "~1.0.2",
+            "sinon": "~1.4.2",
+            "soap": "~0.2.7",
+            "walk": "~2.2.1",
+            "nano": "~3.3.3"
+        },
+        "devDependencies": {
+            "mocha": "*"
+        },
+        "scripts": {
+            "test": "./node_modules/mocha/bin/mocha -R list tests/",
+            "start": "node server.js"
+        },
+        "repository": {
+            "type": "git",
+            "url": "https://github.com/bigbeard/sandbox.git"
+        }
 }

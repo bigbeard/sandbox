@@ -39,5 +39,5 @@ exports.createPacket = function() {
 };
 var createPacket = exports.createPacket;
 
-setInterval(sendTrackingDataPacket, 100);
+setInterval(sendTrackingDataPacket, 1);
 

@@ -1,8 +1,6 @@
 var http = require('http'),
-    publisher = require('./publisher'),
-    subscribers = require('./subscribers'),
-    mongoOutput = require('./outputs/mongoOutput'),
-    couchOutput = require('./outputs/couchOutput');
+    queue = require('./queue'),
+    rulesEngine = require('./rulesEngine');
 
 var server = http.createServer();
 
@@ -18,18 +16,12 @@ server.on('request', function(req, res) {
 
     req.on('end', function() {
         var packet = JSON.parse(data);
-        publisher.publish(packet);
+        queue.send(packet);
     });
 });
 
 server.listen(3000, '127.0.0.1', function() {
     console.log('Server running at http://127.0.0.1:3000/');
-    setUpEventSourceEngine();
+    rulesEngine.start();
 });
-
-var setUpEventSourceEngine = function () {
-    subscribers.loadSubscribers(publisher);
-    mongoOutput.loadOutputs();
-    couchOutput.loadOutputs();
-};
 
