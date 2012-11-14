@@ -1,12 +1,22 @@
 var http = require('http'),
-    sendEvent = require('./sendEvent');
+sendEvent = require('./sendEvent');
+
+var packetCount = 0;
+var numberOfPacketsToSend = process.argv[2];
 
 exports.sendTrackingDataPacket = function() {
-    sendEvent.send(createPacket());
-    count++;
-    console.log("Packets sent:", count);
+    for (var n = 0; n < 1000 ; n++) {
+        sendEvent.send(createPacket());
+        packetCount++;
+    };
+    console.log("Packets sent:", packetCount);
+    if (numberOfPacketsToSend) {
+        if (packetCount >= numberOfPacketsToSend) {
+            clearInterval(timer);
+        }
+    }
 };
-var count = 0;
+
 var sendTrackingDataPacket = exports.sendTrackingDataPacket;
 
 exports.createPacket = function() {
@@ -39,5 +49,5 @@ exports.createPacket = function() {
 };
 var createPacket = exports.createPacket;
 
-setInterval(sendTrackingDataPacket, 1);
+//var timer = setInterval(sendTrackingDataPacket, 100);
 

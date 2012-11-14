@@ -1,0 +1,387 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'zmq' ]
+2 info using npm@1.1.61
+3 info using node@v0.8.9
+4 verbose node symlink C:\Program Files (x86)\nodejs\\node.exe
+5 verbose read json C:\mydev\github\sandbox\package.json
+6 verbose read json C:\mydev\github\sandbox\node_modules\coll\package.json
+7 verbose read json C:\mydev\github\sandbox\node_modules\cqs\package.json
+8 verbose read json C:\mydev\github\sandbox\node_modules\express\package.json
+9 verbose read json C:\mydev\github\sandbox\node_modules\mocha\package.json
+10 verbose read json C:\mydev\github\sandbox\node_modules\mongodb\package.json
+11 verbose read json C:\mydev\github\sandbox\node_modules\nano\package.json
+12 verbose read json C:\mydev\github\sandbox\node_modules\sinon\package.json
+13 verbose read json C:\mydev\github\sandbox\node_modules\soap\package.json
+14 verbose read json C:\mydev\github\sandbox\node_modules\walk\package.json
+15 warn package.json mongodb@1.0.2 No README.md file found!
+16 verbose from cache C:\mydev\github\sandbox\package.json
+17 verbose readDependencies using package.json deps
+18 verbose cache add [ 'zmq', null ]
+19 silly cache add name=undefined spec="zmq" args=["zmq",null]
+20 verbose parsed url { pathname: 'zmq', path: 'zmq', href: 'zmq' }
+21 silly lockFile 87107de2-zmq zmq
+22 verbose lock zmq C:\Users\ian.cliffe\AppData\Roaming\npm-cache\87107de2-zmq.lock
+23 silly lockFile 87107de2-zmq zmq
+24 verbose addNamed [ 'zmq', '' ]
+25 verbose addNamed [ null, '' ]
+26 silly lockFile 6227fbd7-zmq zmq@
+27 verbose lock zmq@ C:\Users\ian.cliffe\AppData\Roaming\npm-cache\6227fbd7-zmq.lock
+28 silly addNameRange { name: 'zmq', range: '', hasData: false }
+29 verbose url raw zmq
+30 verbose url resolving [ 'https://registry.npmjs.org/', './zmq' ]
+31 verbose url resolved https://registry.npmjs.org/zmq
+32 info trying registry request attempt 1 at 20:30:33
+33 verbose etag "D3LYHHDUX4U25FJRK51BXSFEB"
+34 http GET https://registry.npmjs.org/zmq
+35 http 200 https://registry.npmjs.org/zmq
+36 silly registry.get cb [ 200,
+36 silly registry.get   { vary: 'Accept',
+36 silly registry.get     server: 'CouchDB/1.2.0 (Erlang OTP/R15B)',
+36 silly registry.get     etag: '"4VQVHVVYGZ3HO7IYLV32Z8UXM"',
+36 silly registry.get     date: 'Wed, 31 Oct 2012 20:31:17 GMT',
+36 silly registry.get     'content-type': 'application/json',
+36 silly registry.get     'content-length': '21371' } ]
+37 silly addNameRange number 2 { name: 'zmq', range: '', hasData: true }
+38 silly addNameRange versions [ 'zmq',
+38 silly addNameRange   [ '1.0.0',
+38 silly addNameRange     '1.0.1',
+38 silly addNameRange     '1.0.2',
+38 silly addNameRange     '1.0.3',
+38 silly addNameRange     '1.0.4',
+38 silly addNameRange     '2.0.0',
+38 silly addNameRange     '2.0.1',
+38 silly addNameRange     '2.0.2',
+38 silly addNameRange     '2.0.3',
+38 silly addNameRange     '2.1.0',
+38 silly addNameRange     '2.2.0' ] ]
+39 verbose addNamed [ 'zmq', '2.2.0' ]
+40 verbose addNamed [ '2.2.0', '2.2.0' ]
+41 silly lockFile 1f5bd4b1-zmq-2-2-0 zmq@2.2.0
+42 verbose lock zmq@2.2.0 C:\Users\ian.cliffe\AppData\Roaming\npm-cache\1f5bd4b1-zmq-2-2-0.lock
+43 silly lockFile f9c25212-stry-npmjs-org-zmq-zmq-2-2-0-tgz https://registry.npmjs.org/zmq/-/zmq-2.2.0.tgz
+44 verbose lock https://registry.npmjs.org/zmq/-/zmq-2.2.0.tgz C:\Users\ian.cliffe\AppData\Roaming\npm-cache\f9c25212-stry-npmjs-org-zmq-zmq-2-2-0-tgz.lock
+45 verbose addRemoteTarball [ 'https://registry.npmjs.org/zmq/-/zmq-2.2.0.tgz',
+45 verbose addRemoteTarball   '3d1ad20f580fea1c2381993789fb0f49fd6ca711' ]
+46 info retry fetch attempt 1 at 20:30:35
+47 verbose fetch to= C:\Users\IAN~1.CLI\AppData\Local\Temp\npm-8112\1351715435639-0.5566327071283013\tmp.tgz
+48 http GET https://registry.npmjs.org/zmq/-/zmq-2.2.0.tgz
+49 http 200 https://registry.npmjs.org/zmq/-/zmq-2.2.0.tgz
+50 silly shasum updated bytes 19970
+51 info shasum 3d1ad20f580fea1c2381993789fb0f49fd6ca711
+51 info shasum C:\Users\IAN~1.CLI\AppData\Local\Temp\npm-8112\1351715435639-0.5566327071283013\tmp.tgz
+52 verbose tar unpack C:\Users\IAN~1.CLI\AppData\Local\Temp\npm-8112\1351715435639-0.5566327071283013\tmp.tgz
+53 silly lockFile b00f7c63-35639-0-5566327071283013-package C:\Users\IAN~1.CLI\AppData\Local\Temp\npm-8112\1351715435639-0.5566327071283013\package
+54 verbose lock C:\Users\IAN~1.CLI\AppData\Local\Temp\npm-8112\1351715435639-0.5566327071283013\package C:\Users\ian.cliffe\AppData\Roaming\npm-cache\b00f7c63-35639-0-5566327071283013-package.lock
+55 silly gunzTarPerm modes [ '755', '644' ]
+56 silly gunzTarPerm extractEntry package.json
+57 silly gunzTarPerm extractEntry .npmignore
+58 silly gunzTarPerm extractEntry README.md
+59 silly gunzTarPerm extractEntry LICENSE
+60 silly gunzTarPerm extractEntry index.js
+61 silly gunzTarPerm extractEntry History.md
+62 silly gunzTarPerm extractEntry wscript
+63 silly gunzTarPerm extractEntry binding.cc
+64 silly gunzTarPerm extractEntry binding.gyp
+65 silly gunzTarPerm extractEntry Makefile
+66 silly gunzTarPerm extractEntry docs/highlight.js
+67 silly gunzTarPerm extractEntry docs/menu.js
+68 silly gunzTarPerm extractEntry docs/index.html
+69 silly gunzTarPerm extractEntry docs/index.json
+70 silly gunzTarPerm extractEntry docs/style.css
+71 silly gunzTarPerm extractEntry docs/template.jade
+72 silly gunzTarPerm extractEntry examples/dealer_router.js
+73 silly gunzTarPerm extractEntry examples/pub_sub.js
+74 silly gunzTarPerm extractEntry examples/push_pull.js
+75 silly gunzTarPerm extractEntry examples/rep_req.js
+76 silly gunzTarPerm extractEntry examples/req_rep.js
+77 silly gunzTarPerm extractEntry examples/router_dealer.js
+78 silly gunzTarPerm extractEntry examples/rpc.js
+79 silly gunzTarPerm extractEntry examples/devices/forwarder.js
+80 silly gunzTarPerm extractEntry examples/devices/queue.js
+81 silly gunzTarPerm extractEntry examples/devices/streamer.js
+82 silly gunzTarPerm extractEntry examples/workers/producer.js
+83 silly gunzTarPerm extractEntry examples/workers/worker.js
+84 silly gunzTarPerm extractEntry test/run.js
+85 silly gunzTarPerm extractEntry test/test.socket.events.js
+86 silly gunzTarPerm extractEntry test/test.socket.js
+87 silly gunzTarPerm extractEntry test/test.socket.messages.js
+88 silly gunzTarPerm extractEntry test/test.exports.js
+89 silly gunzTarPerm extractEntry test/test.socket.multipart.sndmore.js
+90 silly gunzTarPerm extractEntry test/test.socket.pub-sub.filter.js
+91 silly gunzTarPerm extractEntry test/test.socket.pub-sub.js
+92 silly gunzTarPerm extractEntry test/test.socket.req-rep.js
+93 silly gunzTarPerm extractEntry test/test.socket.req-rep.multiple.js
+94 silly gunzTarPerm extractEntry test/test.socket.multipart.message.js
+95 silly gunzTarPerm extractEntry lib/index.js
+96 verbose read json C:\Users\IAN~1.CLI\AppData\Local\Temp\npm-8112\1351715435639-0.5566327071283013\package\package.json
+97 silly lockFile b00f7c63-35639-0-5566327071283013-package C:\Users\IAN~1.CLI\AppData\Local\Temp\npm-8112\1351715435639-0.5566327071283013\package
+98 verbose from cache C:\Users\IAN~1.CLI\AppData\Local\Temp\npm-8112\1351715435639-0.5566327071283013\package\package.json
+99 verbose tar pack [ 'C:\\Users\\ian.cliffe\\AppData\\Roaming\\npm-cache\\zmq\\2.2.0\\package.tgz',
+99 verbose tar pack   'C:\\Users\\IAN~1.CLI\\AppData\\Local\\Temp\\npm-8112\\1351715435639-0.5566327071283013\\package' ]
+100 verbose tarball C:\Users\ian.cliffe\AppData\Roaming\npm-cache\zmq\2.2.0\package.tgz
+101 verbose folder C:\Users\IAN~1.CLI\AppData\Local\Temp\npm-8112\1351715435639-0.5566327071283013\package
+102 silly lockFile 209ec208--npm-cache-zmq-2-2-0-package-tgz C:\Users\ian.cliffe\AppData\Roaming\npm-cache\zmq\2.2.0\package.tgz
+103 verbose lock C:\Users\ian.cliffe\AppData\Roaming\npm-cache\zmq\2.2.0\package.tgz C:\Users\ian.cliffe\AppData\Roaming\npm-cache\209ec208--npm-cache-zmq-2-2-0-package-tgz.lock
+104 silly lockFile 209ec208--npm-cache-zmq-2-2-0-package-tgz C:\Users\ian.cliffe\AppData\Roaming\npm-cache\zmq\2.2.0\package.tgz
+105 silly lockFile 076874f9-ming-npm-cache-zmq-2-2-0-package C:\Users\ian.cliffe\AppData\Roaming\npm-cache\zmq\2.2.0\package
+106 verbose lock C:\Users\ian.cliffe\AppData\Roaming\npm-cache\zmq\2.2.0\package C:\Users\ian.cliffe\AppData\Roaming\npm-cache\076874f9-ming-npm-cache-zmq-2-2-0-package.lock
+107 silly lockFile 076874f9-ming-npm-cache-zmq-2-2-0-package C:\Users\ian.cliffe\AppData\Roaming\npm-cache\zmq\2.2.0\package
+108 verbose tar unpack C:\Users\ian.cliffe\AppData\Roaming\npm-cache\zmq\2.2.0\package.tgz
+109 silly lockFile 076874f9-ming-npm-cache-zmq-2-2-0-package C:\Users\ian.cliffe\AppData\Roaming\npm-cache\zmq\2.2.0\package
+110 verbose lock C:\Users\ian.cliffe\AppData\Roaming\npm-cache\zmq\2.2.0\package C:\Users\ian.cliffe\AppData\Roaming\npm-cache\076874f9-ming-npm-cache-zmq-2-2-0-package.lock
+111 silly gunzTarPerm modes [ '755', '644' ]
+112 silly gunzTarPerm extractEntry package.json
+113 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+114 silly gunzTarPerm extractEntry .npmignore
+115 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+116 silly gunzTarPerm extractEntry README.md
+117 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+118 silly gunzTarPerm extractEntry LICENSE
+119 silly gunzTarPerm modified mode [ 'LICENSE', 438, 420 ]
+120 silly gunzTarPerm extractEntry index.js
+121 silly gunzTarPerm modified mode [ 'index.js', 438, 420 ]
+122 silly gunzTarPerm extractEntry History.md
+123 silly gunzTarPerm modified mode [ 'History.md', 438, 420 ]
+124 silly gunzTarPerm extractEntry wscript
+125 silly gunzTarPerm modified mode [ 'wscript', 438, 420 ]
+126 silly gunzTarPerm extractEntry binding.cc
+127 silly gunzTarPerm modified mode [ 'binding.cc', 438, 420 ]
+128 silly gunzTarPerm extractEntry binding.gyp
+129 silly gunzTarPerm modified mode [ 'binding.gyp', 438, 420 ]
+130 silly gunzTarPerm extractEntry Makefile
+131 silly gunzTarPerm modified mode [ 'Makefile', 438, 420 ]
+132 silly gunzTarPerm extractEntry docs/highlight.js
+133 silly gunzTarPerm modified mode [ 'docs/highlight.js', 438, 420 ]
+134 silly gunzTarPerm extractEntry docs/menu.js
+135 silly gunzTarPerm modified mode [ 'docs/menu.js', 438, 420 ]
+136 silly gunzTarPerm extractEntry docs/index.html
+137 silly gunzTarPerm modified mode [ 'docs/index.html', 438, 420 ]
+138 silly gunzTarPerm extractEntry docs/index.json
+139 silly gunzTarPerm modified mode [ 'docs/index.json', 438, 420 ]
+140 silly gunzTarPerm extractEntry docs/style.css
+141 silly gunzTarPerm modified mode [ 'docs/style.css', 438, 420 ]
+142 silly gunzTarPerm extractEntry docs/template.jade
+143 silly gunzTarPerm modified mode [ 'docs/template.jade', 438, 420 ]
+144 silly gunzTarPerm extractEntry examples/dealer_router.js
+145 silly gunzTarPerm modified mode [ 'examples/dealer_router.js', 438, 420 ]
+146 silly gunzTarPerm extractEntry examples/pub_sub.js
+147 silly gunzTarPerm modified mode [ 'examples/pub_sub.js', 438, 420 ]
+148 silly gunzTarPerm extractEntry examples/push_pull.js
+149 silly gunzTarPerm modified mode [ 'examples/push_pull.js', 438, 420 ]
+150 silly gunzTarPerm extractEntry examples/rep_req.js
+151 silly gunzTarPerm modified mode [ 'examples/rep_req.js', 438, 420 ]
+152 silly gunzTarPerm extractEntry examples/req_rep.js
+153 silly gunzTarPerm modified mode [ 'examples/req_rep.js', 438, 420 ]
+154 silly gunzTarPerm extractEntry examples/router_dealer.js
+155 silly gunzTarPerm modified mode [ 'examples/router_dealer.js', 438, 420 ]
+156 silly gunzTarPerm extractEntry examples/rpc.js
+157 silly gunzTarPerm modified mode [ 'examples/rpc.js', 438, 420 ]
+158 silly gunzTarPerm extractEntry examples/devices/forwarder.js
+159 silly gunzTarPerm modified mode [ 'examples/devices/forwarder.js', 438, 420 ]
+160 silly gunzTarPerm extractEntry examples/devices/queue.js
+161 silly gunzTarPerm modified mode [ 'examples/devices/queue.js', 438, 420 ]
+162 silly gunzTarPerm extractEntry examples/devices/streamer.js
+163 silly gunzTarPerm modified mode [ 'examples/devices/streamer.js', 438, 420 ]
+164 silly gunzTarPerm extractEntry examples/workers/producer.js
+165 silly gunzTarPerm modified mode [ 'examples/workers/producer.js', 438, 420 ]
+166 silly gunzTarPerm extractEntry examples/workers/worker.js
+167 silly gunzTarPerm modified mode [ 'examples/workers/worker.js', 438, 420 ]
+168 silly gunzTarPerm extractEntry test/run.js
+169 silly gunzTarPerm modified mode [ 'test/run.js', 438, 420 ]
+170 silly gunzTarPerm extractEntry test/test.socket.events.js
+171 silly gunzTarPerm modified mode [ 'test/test.socket.events.js', 438, 420 ]
+172 silly gunzTarPerm extractEntry test/test.socket.js
+173 silly gunzTarPerm modified mode [ 'test/test.socket.js', 438, 420 ]
+174 silly gunzTarPerm extractEntry test/test.socket.messages.js
+175 silly gunzTarPerm modified mode [ 'test/test.socket.messages.js', 438, 420 ]
+176 silly gunzTarPerm extractEntry test/test.exports.js
+177 silly gunzTarPerm modified mode [ 'test/test.exports.js', 438, 420 ]
+178 silly gunzTarPerm extractEntry test/test.socket.multipart.sndmore.js
+179 silly gunzTarPerm modified mode [ 'test/test.socket.multipart.sndmore.js', 438, 420 ]
+180 silly gunzTarPerm extractEntry test/test.socket.pub-sub.filter.js
+181 silly gunzTarPerm modified mode [ 'test/test.socket.pub-sub.filter.js', 438, 420 ]
+182 silly gunzTarPerm extractEntry test/test.socket.pub-sub.js
+183 silly gunzTarPerm modified mode [ 'test/test.socket.pub-sub.js', 438, 420 ]
+184 silly gunzTarPerm extractEntry test/test.socket.req-rep.js
+185 silly gunzTarPerm modified mode [ 'test/test.socket.req-rep.js', 438, 420 ]
+186 silly gunzTarPerm extractEntry test/test.socket.req-rep.multiple.js
+187 silly gunzTarPerm modified mode [ 'test/test.socket.req-rep.multiple.js', 438, 420 ]
+188 silly gunzTarPerm extractEntry test/test.socket.multipart.message.js
+189 silly gunzTarPerm modified mode [ 'test/test.socket.multipart.message.js', 438, 420 ]
+190 silly gunzTarPerm extractEntry lib/index.js
+191 silly gunzTarPerm modified mode [ 'lib/index.js', 438, 420 ]
+192 verbose read json C:\Users\ian.cliffe\AppData\Roaming\npm-cache\zmq\2.2.0\package\package.json
+193 silly lockFile 076874f9-ming-npm-cache-zmq-2-2-0-package C:\Users\ian.cliffe\AppData\Roaming\npm-cache\zmq\2.2.0\package
+194 silly shasum updated bytes 19828
+195 info shasum c87214a71fd0ec3c185a34fb4fdabd235acaf1a1
+195 info shasum C:\Users\ian.cliffe\AppData\Roaming\npm-cache\zmq\2.2.0\package.tgz
+196 verbose from cache C:\Users\ian.cliffe\AppData\Roaming\npm-cache\zmq\2.2.0\package\package.json
+197 verbose chmod C:\Users\ian.cliffe\AppData\Roaming\npm-cache\zmq\2.2.0\package.tgz 644
+198 silly chown skipping for windows C:\Users\ian.cliffe\AppData\Roaming\npm-cache\zmq\2.2.0\package.tgz
+199 silly lockFile f9c25212-stry-npmjs-org-zmq-zmq-2-2-0-tgz https://registry.npmjs.org/zmq/-/zmq-2.2.0.tgz
+200 silly lockFile 1f5bd4b1-zmq-2-2-0 zmq@2.2.0
+201 silly lockFile 6227fbd7-zmq zmq@
+202 silly resolved [ { name: 'zmq',
+202 silly resolved     version: '2.2.0',
+202 silly resolved     description: 'Bindings for node.js to zeromq',
+202 silly resolved     main: 'index',
+202 silly resolved     repository:
+202 silly resolved      { type: 'git',
+202 silly resolved        url: 'http://github.com/JustinTulloss/zeromq.node.git' },
+202 silly resolved     devDependencies: { should: '*', batch: '*', jade: '*', dox: '*' },
+202 silly resolved     engines: { node: '>=0.7.9' },
+202 silly resolved     contributors:
+202 silly resolved      [ [Object],
+202 silly resolved        [Object],
+202 silly resolved        [Object],
+202 silly resolved        [Object],
+202 silly resolved        [Object],
+202 silly resolved        [Object],
+202 silly resolved        [Object],
+202 silly resolved        [Object],
+202 silly resolved        [Object] ],
+202 silly resolved     scripts: { install: 'node-gyp rebuild' },
+202 silly resolved     gypfile: true,
+202 silly resolved     readme: '# node-zeromq\n\n  [ØMQ](http://www.zeromq.org/) bindings for node.js.\n\n## Installation\n\n    $ npm install zmq\n\n## Example\n\nproducer.js:\n\n```js\nvar zmq = require(\'zmq\')\n  , sock = zmq.socket(\'push\');\n\nsock.bindSync(\'tcp://127.0.0.1:3000\');\nconsole.log(\'Producer bound to port 3000\');\n\nsetInterval(function(){\n  console.log(\'sending work\');\n  sock.send(\'some work\');\n}, 500);\n```\n\nworker.js:\n\n```js\n\nvar zmq = require(\'zmq\')\n  , sock = zmq.socket(\'pull\');\n\nsock.connect(\'tcp://127.0.0.1:3000\');\nconsole.log(\'Worker connected to port 3000\');\n\nsock.on(\'message\', function(msg){\n  console.log(\'work: %s\', msg.toString());\n});\n```\n\n## Running tests\n\n  Install dev deps:\n\n     $ npm install\n\n  Build:\n\n     $ make\n\n  Test:\n\n     $ make test\n\n## Contributors\n\n Authored by Justin Tulloss, maintained by Shripad K and TJ Holowaychuk. To contribute please ensure _all_ tests pass, and do your best to maintain the style used within the rest of the library.\n\n Output of `git summary`:\n\n      project: zeromq.node\n      commits: 260\n      files  : 38\n      authors: \n        114 Justin Tulloss          43.8%\n         53 Tj Holowaychuk          20.4%\n         48 Stéphan Kochen         18.5%\n         12 jeremybarnes            4.6%\n         10 TJ Holowaychuk          3.8%\n          9 mike castleman          3.5%\n          3 Yaroslav Shirokov       1.2%\n          2 Corey Jewett            0.8%\n          2 mgc                     0.8%\n          1 rick                    0.4%\n          1 Matt Crocker            0.4%\n          1 Joshua Gourneau         0.4%\n          1 Micheil Smith           0.4%\n          1 Jeremy Barnes           0.4%\n          1 nponeccop               0.4%\n          1 Paul Bergeron           0.4%\n\n',
+202 silly resolved     _id: 'zmq@2.2.0',
+202 silly resolved     dist: { shasum: 'c87214a71fd0ec3c185a34fb4fdabd235acaf1a1' },
+202 silly resolved     _from: 'zmq' } ]
+203 info install zmq@2.2.0 into C:\mydev\github\sandbox
+204 info installOne zmq@2.2.0
+205 verbose from cache C:\Users\ian.cliffe\AppData\Roaming\npm-cache\zmq\2.2.0\package\package.json
+206 info C:\mydev\github\sandbox\node_modules\zmq unbuild
+207 verbose read json C:\mydev\github\sandbox\node_modules\zmq\package.json
+208 verbose tar unpack C:\Users\ian.cliffe\AppData\Roaming\npm-cache\zmq\2.2.0\package.tgz
+209 silly lockFile 1755255b--github-sandbox-node-modules-zmq C:\mydev\github\sandbox\node_modules\zmq
+210 verbose lock C:\mydev\github\sandbox\node_modules\zmq C:\Users\ian.cliffe\AppData\Roaming\npm-cache\1755255b--github-sandbox-node-modules-zmq.lock
+211 silly gunzTarPerm modes [ '755', '644' ]
+212 silly gunzTarPerm extractEntry package.json
+213 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+214 silly gunzTarPerm extractEntry .npmignore
+215 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+216 silly gunzTarPerm extractEntry README.md
+217 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+218 silly gunzTarPerm extractEntry LICENSE
+219 silly gunzTarPerm modified mode [ 'LICENSE', 438, 420 ]
+220 silly gunzTarPerm extractEntry index.js
+221 silly gunzTarPerm modified mode [ 'index.js', 438, 420 ]
+222 silly gunzTarPerm extractEntry History.md
+223 silly gunzTarPerm modified mode [ 'History.md', 438, 420 ]
+224 silly gunzTarPerm extractEntry wscript
+225 silly gunzTarPerm modified mode [ 'wscript', 438, 420 ]
+226 silly gunzTarPerm extractEntry binding.cc
+227 silly gunzTarPerm modified mode [ 'binding.cc', 438, 420 ]
+228 silly gunzTarPerm extractEntry binding.gyp
+229 silly gunzTarPerm modified mode [ 'binding.gyp', 438, 420 ]
+230 silly gunzTarPerm extractEntry Makefile
+231 silly gunzTarPerm modified mode [ 'Makefile', 438, 420 ]
+232 silly gunzTarPerm extractEntry docs/highlight.js
+233 silly gunzTarPerm modified mode [ 'docs/highlight.js', 438, 420 ]
+234 silly gunzTarPerm extractEntry docs/menu.js
+235 silly gunzTarPerm modified mode [ 'docs/menu.js', 438, 420 ]
+236 silly gunzTarPerm extractEntry docs/index.html
+237 silly gunzTarPerm modified mode [ 'docs/index.html', 438, 420 ]
+238 silly gunzTarPerm extractEntry docs/index.json
+239 silly gunzTarPerm modified mode [ 'docs/index.json', 438, 420 ]
+240 silly gunzTarPerm extractEntry docs/style.css
+241 silly gunzTarPerm modified mode [ 'docs/style.css', 438, 420 ]
+242 silly gunzTarPerm extractEntry docs/template.jade
+243 silly gunzTarPerm modified mode [ 'docs/template.jade', 438, 420 ]
+244 silly gunzTarPerm extractEntry examples/dealer_router.js
+245 silly gunzTarPerm modified mode [ 'examples/dealer_router.js', 438, 420 ]
+246 silly gunzTarPerm extractEntry examples/pub_sub.js
+247 silly gunzTarPerm modified mode [ 'examples/pub_sub.js', 438, 420 ]
+248 silly gunzTarPerm extractEntry examples/push_pull.js
+249 silly gunzTarPerm modified mode [ 'examples/push_pull.js', 438, 420 ]
+250 silly gunzTarPerm extractEntry examples/rep_req.js
+251 silly gunzTarPerm modified mode [ 'examples/rep_req.js', 438, 420 ]
+252 silly gunzTarPerm extractEntry examples/req_rep.js
+253 silly gunzTarPerm modified mode [ 'examples/req_rep.js', 438, 420 ]
+254 silly gunzTarPerm extractEntry examples/router_dealer.js
+255 silly gunzTarPerm modified mode [ 'examples/router_dealer.js', 438, 420 ]
+256 silly gunzTarPerm extractEntry examples/rpc.js
+257 silly gunzTarPerm modified mode [ 'examples/rpc.js', 438, 420 ]
+258 silly gunzTarPerm extractEntry examples/devices/forwarder.js
+259 silly gunzTarPerm modified mode [ 'examples/devices/forwarder.js', 438, 420 ]
+260 silly gunzTarPerm extractEntry examples/devices/queue.js
+261 silly gunzTarPerm modified mode [ 'examples/devices/queue.js', 438, 420 ]
+262 silly gunzTarPerm extractEntry examples/devices/streamer.js
+263 silly gunzTarPerm modified mode [ 'examples/devices/streamer.js', 438, 420 ]
+264 silly gunzTarPerm extractEntry examples/workers/producer.js
+265 silly gunzTarPerm modified mode [ 'examples/workers/producer.js', 438, 420 ]
+266 silly gunzTarPerm extractEntry examples/workers/worker.js
+267 silly gunzTarPerm modified mode [ 'examples/workers/worker.js', 438, 420 ]
+268 silly gunzTarPerm extractEntry test/run.js
+269 silly gunzTarPerm modified mode [ 'test/run.js', 438, 420 ]
+270 silly gunzTarPerm extractEntry test/test.socket.events.js
+271 silly gunzTarPerm modified mode [ 'test/test.socket.events.js', 438, 420 ]
+272 silly gunzTarPerm extractEntry test/test.socket.js
+273 silly gunzTarPerm modified mode [ 'test/test.socket.js', 438, 420 ]
+274 silly gunzTarPerm extractEntry test/test.socket.messages.js
+275 silly gunzTarPerm modified mode [ 'test/test.socket.messages.js', 438, 420 ]
+276 silly gunzTarPerm extractEntry test/test.exports.js
+277 silly gunzTarPerm modified mode [ 'test/test.exports.js', 438, 420 ]
+278 silly gunzTarPerm extractEntry test/test.socket.multipart.sndmore.js
+279 silly gunzTarPerm modified mode [ 'test/test.socket.multipart.sndmore.js', 438, 420 ]
+280 silly gunzTarPerm extractEntry test/test.socket.pub-sub.filter.js
+281 silly gunzTarPerm modified mode [ 'test/test.socket.pub-sub.filter.js', 438, 420 ]
+282 silly gunzTarPerm extractEntry test/test.socket.pub-sub.js
+283 silly gunzTarPerm modified mode [ 'test/test.socket.pub-sub.js', 438, 420 ]
+284 silly gunzTarPerm extractEntry test/test.socket.req-rep.js
+285 silly gunzTarPerm modified mode [ 'test/test.socket.req-rep.js', 438, 420 ]
+286 silly gunzTarPerm extractEntry test/test.socket.req-rep.multiple.js
+287 silly gunzTarPerm modified mode [ 'test/test.socket.req-rep.multiple.js', 438, 420 ]
+288 silly gunzTarPerm extractEntry test/test.socket.multipart.message.js
+289 silly gunzTarPerm modified mode [ 'test/test.socket.multipart.message.js', 438, 420 ]
+290 silly gunzTarPerm extractEntry lib/index.js
+291 silly gunzTarPerm modified mode [ 'lib/index.js', 438, 420 ]
+292 verbose read json C:\mydev\github\sandbox\node_modules\zmq\package.json
+293 silly lockFile 1755255b--github-sandbox-node-modules-zmq C:\mydev\github\sandbox\node_modules\zmq
+294 info preinstall zmq@2.2.0
+295 verbose from cache C:\mydev\github\sandbox\node_modules\zmq\package.json
+296 verbose readDependencies using package.json deps
+297 verbose from cache C:\mydev\github\sandbox\node_modules\zmq\package.json
+298 verbose readDependencies using package.json deps
+299 silly resolved []
+300 verbose about to build C:\mydev\github\sandbox\node_modules\zmq
+301 info build C:\mydev\github\sandbox\node_modules\zmq
+302 verbose from cache C:\mydev\github\sandbox\node_modules\zmq\package.json
+303 verbose linkStuff [ false,
+303 verbose linkStuff   false,
+303 verbose linkStuff   false,
+303 verbose linkStuff   'C:\\mydev\\github\\sandbox\\node_modules' ]
+304 info linkStuff zmq@2.2.0
+305 verbose linkBins zmq@2.2.0
+306 verbose linkMans zmq@2.2.0
+307 verbose rebuildBundles zmq@2.2.0
+308 info install zmq@2.2.0
+309 verbose unsafe-perm in lifecycle true
+310 silly exec cmd "/c" "node-gyp rebuild"
+311 silly cmd,/c,node-gyp rebuild,C:\mydev\github\sandbox\node_modules\zmq spawning
+312 info zmq@2.2.0 Failed to exec install script
+313 info C:\mydev\github\sandbox\node_modules\zmq unbuild
+314 verbose from cache C:\mydev\github\sandbox\node_modules\zmq\package.json
+315 info preuninstall zmq@2.2.0
+316 info uninstall zmq@2.2.0
+317 verbose true,C:\mydev\github\sandbox\node_modules,C:\mydev\github\sandbox\node_modules unbuild zmq@2.2.0
+318 info postuninstall zmq@2.2.0
+319 error zmq@2.2.0 install: `node-gyp rebuild`
+319 error `cmd "/c" "node-gyp rebuild"` failed with 1
+320 error Failed at the zmq@2.2.0 install script.
+320 error This is most likely a problem with the zmq package,
+320 error not with npm itself.
+320 error Tell the author that this fails on your system:
+320 error     node-gyp rebuild
+320 error You can get their info via:
+320 error     npm owner ls zmq
+320 error There is likely additional logging output above.
+321 error System Windows_NT 6.1.7601
+322 error command "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "zmq"
+323 error cwd C:\mydev\github\sandbox
+324 error node -v v0.8.9
+325 error npm -v 1.1.61
+326 error code ELIFECYCLE
+327 verbose exit [ 1, true ]

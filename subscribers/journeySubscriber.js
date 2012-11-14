@@ -34,7 +34,7 @@ var createJourneyAndStore  = function (event) {
 var endJourneyAndOutput = function (event, journeyToEnd) {
     journeyToEnd.endDateTime = event.dateTime;
     journies.remove(journeyToEnd.trackingUnitId);
-    journeySubscriber.output(journeyToEnd);
+    emitter.emit("journey", journeyToEnd);
 };
 
 var addTimesToJourney = function (event, previousEvent, journey) {
@@ -81,10 +81,6 @@ var journeySubscriber = {
         }
 
         vehicleStatuses.set(event.trackingUnitId, event);
-    },
-    output: function (outputObject) {
-        console.log("Journey Event: ", outputObject.trackingUnitId);
-        emitter.emit("journey", outputObject);
     }
 };
 

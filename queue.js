@@ -13,45 +13,64 @@ var createQueue = function (callback) {
         if(!error) {
             console.log("Event queue is ready");
             event_queue = queue;
-            callback();
+            if (callback) {
+                callback();
+            }
         } else {
             console.log("create queue error: ", error);
-            callback(error);
+            if (callback) {
+                callback(error);
+            }
         }
     });
 };
 
+createQueue();
+
 var timer;
+var sentCount = 0;
+var receiveCount = 0;
 
 var timerEvent = function () {
-    getNextMessage(function (message) {
-        if (message) {
-            emitter.emit("receive", message.Body);
-            message.del(function (error) {
-                console.log("message deleted");
+    getNextMessage(function (messages) {
+        if (messages) {
+            messages.forEach(function (message) {
+                emitter.emit("receive", message.Body);
+                message.del(function (error) {
+//                    console.log("message deleted");
+                    receiveCount++;
+                    if (receiveCount%100 === 0 ) {
+                        console.log("Messages received : ", receiveCount);
+                    }
+                });
             });
         }
     });
 };
 
 var getNextMessage = function (callback) {
-    event_queue.receive(function (error, messages) {
+    cqs.ReceiveMessage(event_queue, 10, function (error, messages) {
         if (error) {
             console.log("receive error: ", error);
         }
         if (messages) {
-            callback(messages[0]);
+            callback(messages);
         }
     });
 };
 
 var eventQueue = {
-    send: function (payload) {
+    send: function (payload, callback) {
         event_queue.send(payload, function(error, message) {
             if(error) {
                 console.log("send error: ", error);
+                callback(error);
             } else {
-                console.log('Sent: ' + JSON.stringify(message.Body));
+                sentCount++;
+                if (sentCount%100 === 0 ) {
+                    console.log("Messages sent to queue : ", sentCount);
+                }
+                callback();
             }
         });
     },
@@ -61,7 +80,7 @@ var eventQueue = {
     startReceive : function () {
         createQueue(function (error) {
             if (!error) {
-                timer = setInterval(timerEvent, 10);
+                timer = setInterval(timerEvent, 100);
             };
         });
     }

@@ -1,34 +1,49 @@
 var fs = require('fs'),
-    walk = require('walk');
+walk = require('walk');
 
-exports.loadSubscribers = function (publisher) {
-    var walkOptions = {
-        followLinks: false
-    };
 
-    var walker = walk.walk('./subscribers', walkOptions);
+var exclude = "eventStoreSubscriber.js";
 
-    walker.on("directories", function (root, dirStatsArray, next) {
-        next();
-    });
+var subscribers = {
+    loadSubscribers: function (publisher) {
+        var subscriber1 = require('./subscribers/journeySubscriber.js');
+        publisher.addSubscriber(subscriber1);
+        var subscriber2 = require('./subscribers/speedSubscriber.js');
+        publisher.addSubscriber(subscriber2);
+/*
+        var walkOptions = {
+            followLinks: false
+        };
 
-    walker.on("file", function (root, fileStats, next) {
-        var filename = fileStats.name;
-        console.log('filename:', filename);
-        var subscriber = require('./subscribers/' + filename);
+        var walker = walk.walk('./subscribers', walkOptions);
 
-        if ((subscriber.publish) && (subscriber.output) && (subscriber.eventTypes)) {
-            publisher.addSubscriber(subscriber);
-        }
+        walker.on("directories", function (root, dirStatsArray, next) {
+            next();
+        });
 
-        next();
-    });
+        walker.on("file", function (root, fileStats, next) {
+            var filename = fileStats.name;
 
-    walker.on("errors", function (root, nodeStatsArray, next) {
-        next();
-    });
+            if (filename != exclude) {
+                console.log('filename:', filename);
+                var subscriber = require('./subscribers/' + filename);
 
-    walker.on("end", function () {
-        console.log('all subscribers loaded');
-    });
+                if ((subscriber.publish) && (subscriber.eventTypes)) {
+                    publisher.addSubscriber(subscriber);
+                }
+            }
+            next();
+        });
+
+        walker.on("errors", function (root, nodeStatsArray, next) {
+            next();
+        });
+
+        walker.on("end", function () {
+            console.log('all subscribers loaded');
+        });
+*/
+    }
 };
+
+module.exports = subscribers;

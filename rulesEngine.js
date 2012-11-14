@@ -1,23 +1,26 @@
 var subscribers = require('./subscribers'),
-    // mongoOutput = require('./outputs/mongoOutput'),
-    couchOutput = require('./outputs/couchOutput'),
-    queue = require('./queue'),
+    mongoOutput = require('./outputs/mongoOutput'),
+    //couchOutput = require('./outputs/couchOutput'),
+    //queue = require('./queue'),
     publisher = require('./publisher');
 
 var rulesEngine = {
     start: function () {
-       subscribers.loadSubscribers(publisher);
-        // mongoOutput.loadOutputs();
-        couchOutput.loadOutputs();
+        subscribers.loadSubscribers(publisher);
+        mongoOutput.loadOutputs();
+        //couchOutput.loadOutputs();
 
-        queue.startReceive();
+//        queue.startReceive();
 
-        queue.on("receive", function (message) {
+//        queue.on("receive", function (message) {
 //            console.log("rulesEngine receive: ", message);
-            publisher.publish(message);
-        });
+//            publisher.publish(message);
+//        });
+    },
+    publish: function (message) {
+        //console.log("publish: ", message);
+        publisher.publish(message);
     }
-
 };
 
 module.exports = rulesEngine;
